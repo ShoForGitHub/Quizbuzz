@@ -42,19 +42,15 @@ const Quiz = (props) => {
   //map options of every quiz
   let options = decodedOptionsArray.map((option, index) => {
     let idOption = nanoid()
-    let bgColor = ''
+    let optionClassName = 'text-slate-700 border border-slate-400 rounded py-1 px-3 mr-2 hover:bg-slate-100 cursor-pointer active:shadow-inner '
 
     if (option === decodedCorrectAnswer && props.isAnswered) {
-      bgColor = '#dcfce7';
+      optionClassName += 'bg-green-100';
   } else if (option === props.userAnswer && props.isAnswered) {
-      bgColor = '#fee2e2';
+      optionClassName += 'bg-red-100';
   } else if (option === props.userAnswer && !props.isAnswered) {
-      bgColor = '#f1f5f9';
+      optionClassName += 'bg-slate-100';
   }
-
-    const style = {
-      backgroundColor: bgColor,
-    };
 
     return (
       <div key={idOption} className="flex items-center">
@@ -71,8 +67,7 @@ const Quiz = (props) => {
         />
         <label 
           htmlFor={idOption}
-          className='bg-transparent border border-slate-400 rounded py-1 px-3 mr-2 hover:bg-slate-100 cursor-pointer active:shadow-inner'
-          style={style}
+          className={optionClassName}
         >
           {optionsArray[index]}
         </label>
