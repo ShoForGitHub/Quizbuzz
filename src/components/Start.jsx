@@ -7,7 +7,8 @@ const Start = ({onClick, onChange, selectedLanguage}) => {
       <p className="text-slate-900 mb-5">Enjoy your quizzes!</p>
       <label>
         Language:
-        <select 
+        <select
+          name="language"
           value={selectedLanguage} 
           onChange={onChange} 
           className="border border-slate-500 rounded ml-1"

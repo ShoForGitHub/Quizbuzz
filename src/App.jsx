@@ -94,7 +94,7 @@ function App() {
       isStart
       ?
       <fieldset>
-        <form onSubmit={checkAnswers} className="flex flex-col m-auto px-14 py-6">
+        <form name="quizForm" onSubmit={checkAnswers} className="flex flex-col m-auto px-14 py-6">
           <section>
             {quizzes}
           </section>
