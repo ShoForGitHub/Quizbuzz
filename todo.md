@@ -18,7 +18,7 @@ https://codepen.io/azrikahar/pen/zYKyQxw
 16. to fix: rerendered every time when an option is checked
 (
     maybe create a new formData; 
-    disabled={props.isAnswered ? true : false};
-    bg-color
+    ✖disabled={props.isAnswered ? true : false};
+    ✖bg-color
 )
 17. Use react form?
