@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { nanoid } from "nanoid"
 import { decode } from 'html-entities'
-import { translate } from 'deepl'
+import translate from 'deepl'
 
 const Quiz = (props) => {
   const [question, setQuestion] = useState('')
