@@ -9,7 +9,7 @@ function App() {
   const [isAnswered, setIsAnswered] = useState(false)
   const [isStart, setIsStart] = useState(false)
   const [selectedLanguage, setSelectedLanguage] = useState('EN');
-  
+
   function ChangeLanguage (event) {
     setSelectedLanguage(event.target.value)
   }
@@ -104,6 +104,7 @@ function App() {
             <button 
               type="submit" 
               className="text-white bg-slate-600 rounded-full pt-1 pb-2 px-3 mt-6 hover:bg-slate-700 self-center"
+              title="Please answer all questions before checking the answer."
             >
               Check Answer
             </button> 
@@ -123,8 +124,8 @@ function App() {
       </fieldset> 
       :
       <Start 
-        onClick={quizStart} 
-        onChange={ChangeLanguage} 
+        onClick={quizStart}
+        onChange={ChangeLanguage}
         selectedLanguage={selectedLanguage}
       />
     }

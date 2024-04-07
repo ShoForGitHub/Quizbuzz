@@ -44,6 +44,10 @@ const Quiz = (props) => {
     let idOption = nanoid()
     let optionClassName = 'text-slate-700 border border-slate-400 rounded py-1 px-3 mr-2 hover:bg-slate-100 cursor-pointer active:shadow-inner '
 
+    if (props.isAnswered) {
+      optionClassName = 'text-slate-700 border border-slate-400 rounded py-1 px-3 mr-2 hover:bg-slate-100 cursor-not-allowed active:shadow-inner '
+    }
+
     if (option === decodedCorrectAnswer && props.isAnswered) {
       optionClassName += 'bg-green-100';
   } else if (option === props.userAnswer && props.isAnswered) {
