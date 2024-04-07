@@ -12,7 +12,6 @@ const Quiz = (props) => {
   let decodedCorrectAnswer = decode(props.correct_answer)
   let decodedOptionsArray = props.optionsArray.map(option => decode(option))
   let language = props.selectedLanguage
-  console.log("rendered")
 
   useEffect(() => {
     if (language === 'EN') {
@@ -21,7 +20,7 @@ const Quiz = (props) => {
     } else {
       getTranslations(decodedQuestion, decodedOptionsArray)
     }
-  }, [])
+  }, [language])
   
   async function getTranslations(question, optionsArray) {
     try {
@@ -42,16 +41,17 @@ const Quiz = (props) => {
   //map options of every quiz
   let options = decodedOptionsArray.map((option, index) => {
     let idOption = nanoid()
+    
+    //control options' color
     let optionClassName = 'text-slate-700 border border-slate-400 rounded py-1 px-3 mr-2 hover:bg-slate-100 cursor-pointer active:shadow-inner '
 
     if (props.isAnswered) {
       optionClassName = 'text-slate-700 border border-slate-400 rounded py-1 px-3 mr-2 hover:bg-slate-100 cursor-not-allowed active:shadow-inner '
-    }
-
-    if (option === decodedCorrectAnswer && props.isAnswered) {
-      optionClassName += 'bg-green-100';
-    } else if (option === props.userAnswer && props.isAnswered) {
-      optionClassName += 'bg-red-100';
+      if (option === decodedCorrectAnswer) {
+        optionClassName += 'bg-green-100';
+      } else if (option === props.userAnswer) {
+        optionClassName += 'bg-red-100';
+      }
     }
 
     return (
