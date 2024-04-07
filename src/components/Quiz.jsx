@@ -50,11 +50,9 @@ const Quiz = (props) => {
 
     if (option === decodedCorrectAnswer && props.isAnswered) {
       optionClassName += 'bg-green-100';
-  } else if (option === props.userAnswer && props.isAnswered) {
+    } else if (option === props.userAnswer && props.isAnswered) {
       optionClassName += 'bg-red-100';
-  } else if (option === props.userAnswer && !props.isAnswered) {
-      optionClassName += 'bg-slate-100';
-  }
+    }
 
     return (
       <div key={idOption} className="flex items-center">

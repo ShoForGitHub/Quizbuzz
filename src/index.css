@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+input[type="radio"]:enabled:checked ~ label {
+  @apply bg-slate-200
+}
