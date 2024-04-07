@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from 'react'
+import { LuXCircle,LuCheckCircle } from "react-icons/lu"
 import { nanoid } from "nanoid"
 import { decode } from 'html-entities'
 import translate from 'deepl'
@@ -80,12 +81,20 @@ const Quiz = (props) => {
   //UI
   return (
     <>
-      <legend className="text-wrap text-xl py-2 text-slate-700 font-bold">
-        {question}
-      </legend>
-      <section className="options mb-4 flex flex-col sm:flex-row items-center gap-3">
-        {options}
-      </section>  
+      <div className='flex items-center'>
+        <div>
+          <legend className="text-wrap text-xl py-2 text-slate-700 font-bold">
+            {question}
+          </legend>
+          <section className="options mb-4 flex flex-col sm:flex-row items-center gap-3">
+            {options}
+          </section>
+        </div>
+        {props.isAnswered && props.userAnswer === decodedCorrectAnswer && 
+        <LuCheckCircle className='ml-auto shrink-[0.5] md:shrink-0' color='green' size={40} />}
+        {props.isAnswered && props.userAnswer !== decodedCorrectAnswer && 
+        <LuXCircle className='ml-auto shrink-[0.5] md:shrink-0' color='red' size={40} />}
+      </div>
       <hr/>
     </>
   )

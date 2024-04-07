@@ -89,12 +89,12 @@ function App() {
   
   //UI
   return (
-    <main>
+    <main className='flex justify-center px-0 lg:px-6'>
     {
       isStart
       ?
       <fieldset>
-        <form name="quizForm" onSubmit={checkAnswers} className="flex flex-col m-auto px-14 py-6">
+        <form name="quizForm" onSubmit={checkAnswers} className="flex flex-col m-auto pl-1 mx-1 lg:px-14 py-6">
           <section>
             {quizzes}
           </section>

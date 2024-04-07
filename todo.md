@@ -22,3 +22,5 @@ https://codepen.io/azrikahar/pen/zYKyQxw
     ✖bg-color
 )
 17. Use react form?
+18. favicon credit Scroll unfurled icon
+https://game-icons.net/1x1/lorc/scroll-unfurled.html
