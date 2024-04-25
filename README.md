@@ -10,7 +10,7 @@ A quiz app made with the Open Trivia Database API and the DeepL API. Players can
   - html-entities
   - deepl
 ## Usage
-1. Visit the [website](quizbuzzsho.netlify.app/).
+1. Visit the [website](https://quizbuzzsho.netlify.app/).
 2. Choose your preferred language.
 3. Answer all questions.
 4. Receive scores and correct answers.
